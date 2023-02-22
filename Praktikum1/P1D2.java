@@ -1,5 +1,5 @@
 import java.io.*;
-public class P2D2 {
+public class P1D2 {
     public static void main(String[] args) throws IOException
     {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
