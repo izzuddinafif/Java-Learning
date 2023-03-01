@@ -6,7 +6,7 @@ public class P1C1 {
         String nrp, nama;
         System.out.print("NRP: ");
         nrp=br.readLine();
-        System.out.print("Nama:");
+        System.out.print("Nama: ");
         nama=br.readLine();
         System.out.println("==================================");
         System.out.println("Nama saya adalah "+nama);
