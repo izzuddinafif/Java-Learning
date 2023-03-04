@@ -1,7 +1,43 @@
 import java.io.*;
-public class P2T2
+public class P2T2 
 {
-    private int pil;
+   public static void main(String[] args) throws IOException
+   {
+       BufferedReader dataIn = new BufferedReader(new InputStreamReader(System.in));
+       matematikaCanggihBeraksi mcb = new matematikaCanggihBeraksi();
+       
+        int pilih=0;
+        while(pilih != 4)
+        {
+            System.out.print("Masukkan nilai a: ");
+            int a = Integer.parseInt(dataIn.readLine());
+            System.out.print("Masukkan nilai b: ");
+            int b = Integer.parseInt(dataIn.readLine());
+            System.out.print("1. Penjumlahan\n2. Perkalian\n3. Modulus\n4. Keluar \nPilih: ");
+            pilih = Integer.parseInt(dataIn.readLine());
+            switch(pilih)
+            {
+                case 1:
+                    mcb.penjumlahan1(a, b);
+                    break;
+                case 2:
+                    mcb.perkalian2(a, b);
+                    break;
+                case 3:
+                    mcb.modulus(a, b);
+                    break;
+                case 4:
+                    System.out.println("Keluar");
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("Pilihan tidak ada");
+            }
+        }
+    }
+}
+class matematikaCanggih
+{
     public void penjumlahan(int a, int b)
     {
         System.out.println("Penjumlahan: "+(a+b));
@@ -11,7 +47,7 @@ public class P2T2
         System.out.println("Perkalian: "+(a*b));
     }
 }
-class matematikaCanggih extends P2T2
+class matematikaCanggihBeraksi extends matematikaCanggih
 {
     public void modulus(int a, int b)
     {
@@ -24,44 +60,5 @@ class matematikaCanggih extends P2T2
     public void perkalian2(int a, int b)
     {
         super.perkalian(a, b);
-    }
-}
-class matematikaCanggihBeraksi extends matematikaCanggih
-{
-    public static void main(String[] args)
-    {
-        matematikaCanggihBeraksi mcb = new matematikaCanggihBeraksi();
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        try
-        {
-            System.out.print("Masukkan bilangan pertama: ");
-            int a = Integer.parseInt(br.readLine());
-            System.out.print("Masukkan bilangan kedua: ");
-            int b = Integer.parseInt(br.readLine());
-            System.out.println("Pilihan: ");
-            System.out.println("1. Penjumlahan");
-            System.out.println("2. Perkalian");
-            System.out.println("3. Modulus");
-            System.out.print("Pilihan: ");
-            int pil = Integer.parseInt(br.readLine());
-            switch(pil)
-            {
-                case 1:
-                    mcb.penjumlahan1(a, b);
-                    break;
-                case 2:
-                    mcb.perkalian2(a, b);
-                    break;
-                case 3:
-                    mcb.modulus(a, b);
-                    break;
-                default:
-                    System.out.println("Pilihan tidak ada");
-            }
-        }
-        catch(IOException e)
-        {
-            System.out.println("Error: "+e);
-        }
     }
 }
