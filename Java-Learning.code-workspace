@@ -2,6 +2,10 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"name": "Matlab-003",
+			"path": "../../../../../Documents/GitHub/Matlab-003/Matlab-003"
 		}
 	],
 	"settings": {}
